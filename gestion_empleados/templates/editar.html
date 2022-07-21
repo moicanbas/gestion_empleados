@@ -1,0 +1,32 @@
+{% extends "./layout.html" %}
+
+{% block content %}
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/agregar.css' %}">
+</head>
+<body>
+  
+  <form method="POST">
+  {% csrf_token %}
+  <section class="form-register">
+  <h4>Editar Empleados</h4>
+  <label id="Labels">Cedula</label>
+  {{ form.cedula }} <br>
+  <label id="Labels">Nombre</label>
+  {{ form.nombre }} <br>
+  <label id="Labels">Apellido</label>
+  {{ form.apellido }} <br>
+  <label id="Labels">Fecha de Nacimiento</label>
+  {{ form.fecha_nacimiento }} <br>
+  <label id="Labels">Correo Elctronico</label>
+  {{ form.email }} <br>
+  <label id="Labels">Celular</label>
+  {{ form.celular }} <br>
+  <button type="submit">Editar Empleado</button>
+  
+</section>
+
+</form>
+</body>
+{% endblock %}

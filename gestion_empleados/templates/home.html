@@ -1,0 +1,71 @@
+{% extends "./layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+  <title>Home</title>
+  </head>
+<body>
+
+<div id="cabecera">
+  <h1 class="titulo">Lista Empleados</h1>
+</div>
+<button id="agregar"><a href="{% url 'agregar' %}">Agregar Empleados</a></button>
+    <div id="main-container">
+    <table id="Table_Empleados">
+        <thead>
+          <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha Nacimiento</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%for empleado in empleado %}
+          <tr>
+             <td>{{ empleado.cedula }}</td>
+             <td>{{ empleado.nombre }}</td>
+             <td>{{ empleado.apellido }}</td>
+             <td>{{ empleado.fecha_nacimiento }}</td>
+             <td>{{ empleado.email }}</td>
+             <td>{{ empleado.celular }}</td>
+             <td>
+              </button>
+              <button class="acciones" id="eliminar"><a href="{% url 'eliminar' empleado.id %}">Eliminar</a></button>
+              <br>
+              <button class="acciones" id="editar"><a href="{% url 'editar' empleado.id %}">Editar</a></button>
+             </td>
+            </tr>
+            {% endfor %}
+        </tbody>   
+        
+    </table>
+  </div>
+  
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js" ></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#Table_Empleados').DataTable({
+      "language": {
+"url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+}
+    });
+  });
+</script>
+
+{% endblock %}
+</body>
+</html>

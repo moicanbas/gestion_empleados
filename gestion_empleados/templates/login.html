@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Login</title>
+</head>
+<body>
+   <form method="POST">
+      <h2 class="title">Gestor de empleados</h2>
+     {% csrf_token %}
+      <label>Nombre de usuario
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="idusername" class="form-control" placeholder="Nombre de usuario" name="username">
+      </label>
+      <label >Contraseña
+        <i class="fa-solid fa-lock"></i>
+      
+        <input type="password" id="id_password" class="form-control" placeholder="Contraseña" name="password">
+      </label>
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>

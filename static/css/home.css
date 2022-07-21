@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #cb232c, #ce1d61);
+} 
+#cabecera{
+  display: flex;
+  margin: 5%;
+  justify-content: center;
+}
+.titulo{
+  font-weight: bold;
+
+}
+
+#main-container{
+justify-content: center;
+background-color: white;
+
+}
+table{
+  background-color: white;
+  margin: 150px auto;
+  width: 80%;
+  text-align: center;
+  width: 100%;
+}
+th,td{
+  padding: 20px;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.acciones{
+  font-weight:600;
+  font-size:12px;
+  color:#ffffff;
+  padding-top:2px;
+  padding-bottom:2px;
+  padding-left:4px;
+  padding-right:4px;
+  border-radius: 5px;
+}
+#editar{
+  background-color:#005BBB;
+}
+#eliminar{
+  background-color: rgba(77, 1, 1, 0.993);   
+} 
+#agregar{
+  background-color:#00b966;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  color:#ffffff;
+  padding-top:2px;
+  padding-bottom:2px;
+  padding-left:20px;
+  padding-right:20px;
+  border-radius: 8px;
+}
+.agregar:hover{
+  background-color:#000000;
+}
