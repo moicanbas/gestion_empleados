@@ -23,4 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('gestion_empleados.urls'), name='home'),
     path('', LoginView.as_view(template_name='./login.html'), name="login"),
-]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
